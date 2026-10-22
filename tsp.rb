@@ -13,12 +13,14 @@ def solve(matrix, path = [0])
   end
 end
 
-# Example usage
-travel_times = [
-  [ 0, 10, 15, 20],
-  [10,  0, 35, 25],
-  [15, 35,  0, 30],
-  [20, 25, 30,  0]
-]
+if __FILE__ == $PROGRAM_NAME
+  travel_times = [
+    [ 0, 10, 15, 20],
+    [10,  0, 35, 25],
+    [15, 35,  0, 30],
+    [20, 25, 30,  0]
+  ]
 
-solve(travel_times)
+  solve(travel_times)
+
+end
