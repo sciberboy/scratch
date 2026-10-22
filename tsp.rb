@@ -5,14 +5,19 @@ TravelTimes = [
   [20, 25, 30,  0]
 ].freeze
 
-def print_perm_tree(remaining, path = [0])
-  if remaining.empty?
+
+
+def solve(stops, path = [0])
+  costs = ->(path) { path.each_cons(2).sum { |a, b| TravelTimes[a][b] } }
+
+  if stops.empty?
+    puts costs.call(path)
     puts (path + [0]).join('-')
   else
-    remaining.each do |num|
-      print_perm_tree(remaining - [num], path + [num])
+    stops.each do |num|
+      solve(stops - [num], path + [num])
     end
   end
 end
 
-print_perm_tree([1, 2, 3])
+solve([1, 2, 3])
