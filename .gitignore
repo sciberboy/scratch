@@ -647,3 +647,6 @@ build-iPhoneSimulator/
 
 ### GPG template
 secring.*
+
+*.xml
+*.iml
